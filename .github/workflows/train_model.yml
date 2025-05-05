@@ -1,0 +1,35 @@
+name: Reentrenar modelo Iris
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  retrain-model:
+    runs-on: ubuntu-latest
+
+    env:
+      DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Reentrenar modelo
+      run: |
+        echo "Usando secret DUMMY_SECRET: $DUMMY_SECRET"
+        python model.py
+
+    - name: Verificar archivo generado
+      run: ls -lh iris_model.pkl
