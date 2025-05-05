@@ -53,7 +53,7 @@ GET /: retorna un mensaje básico para verificar que la API está activa.
 1. Clonar el repositorio:
 
 git clone https://github.com/Jasser710/Trabajo-Practico-4.git  
-cd nombre-del-repositorio
+cd Trabajo-Practico-4
 
 2. Crear un entorno virtual (opcional pero recomendado):
 
@@ -84,8 +84,8 @@ El proyecto incluye un flujo de trabajo en .github/workflows/train_model.yml que
 
 La imagen de la API está lista para ser construida con Docker. Comando de ejemplo:
 
-docker build -t iris-api .  
-docker run -d -p 8000:8000 iris-api
+docker build -t trabajo-practico-4 .  
+docker run -p 8000:8000 trabajo-practico-4
 
 ## Autor
 
