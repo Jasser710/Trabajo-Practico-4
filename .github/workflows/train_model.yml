@@ -29,7 +29,7 @@ jobs:
     - name: Reentrenar modelo
       run: |
         echo "Usando secret DUMMY_SECRET: $DUMMY_SECRET"
-        python model.py
+        python app/model.py
 
     - name: Verificar archivo generado
       run: ls -lh iris_model.pkl
