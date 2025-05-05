@@ -70,7 +70,7 @@ python model.py
 
 5. Ejecutar la API:
 
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 
 ## Automatización con GitHub Actions
 
